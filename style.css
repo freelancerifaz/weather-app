@@ -9,3 +9,43 @@ body{
     background-repeat: no-repeat;
     background-position: top;
 }
+.container{
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+.title{
+    margin-top: 1rem;
+    color: #684f27;
+}
+.search-box{
+    background-color: rgb(224, 221, 221);
+    height: 100px;
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-radius: 5px;
+}
+.search-box input{
+    background-color: white;
+    text-align: center;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 2px;
+    font-size: 20px;
+    width: 80%;
+}
+.search-box input:focus{
+    outline: none;
+}
+.weather-body{
+    background-color: rgb(224, 221, 221);
+    padding: 4rem 0;
+    border-radius: 5px;
+    display: none;
+}
+.text-style{
+    color: #333333;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 1rem 0;
+}
