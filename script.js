@@ -1,8 +1,10 @@
 // weather api
 
 const weatherApi = {
-    keys : '4c498be4e9986ff88fc8f29fd42c7b35',
-    baseUrl : "http://maps.openweathermap.org/maps/2.0/weather" 
+    keys : "4c498be4e9986ff88fc8f29fd42c7b35",
+    baseUrl : "http://api.openweathermap.org/data/2.5/weather" 
+    // key: "9c03ae49705801d954820517e5c354e8",
+    // baseUrl:"https://api.openweathermap.org/data/2.5/weather"
 }
 
 // add event listener function
@@ -20,7 +22,7 @@ searchBoxData.addEventListener('keypress',(event) => {
 // get weather data 
 
 function getWeatherData(city){
-    fetch(`${weatherApi.baseUrl}?q=${city}&appid=${weatherApi.key}&units=metric`)
+    fetch(`${weatherApi.baseUrl}?q=${city}&APPID=${weatherApi.key}&units=metric`)
     .then(response => response.json())
     .then(data => showWeatherReport(data))
 }
@@ -28,10 +30,11 @@ function getWeatherData(city){
 // show weather report
 
 function showWeatherReport(weather){
+    console.log(weather);
     let city = document.getElementById("city");
     city.innerText = `${weather.name} , ${weather.sys.country}`;
 
-    let todayDate = document.getElementById("date");
+    let todayDate = document.getElementById("time");
     const currentDate = new Date();
     todayDate.innerText = dateManage(currentDate);
 
@@ -47,26 +50,26 @@ function showWeatherReport(weather){
     let weatherType = document.getElementById("weather");
     weatherType.innerText = `${weather.weather[0].main}`;
 
-    const weatherType = `${weather.weather[0].main}`;
-    if(weatherType === 'clear'){
+    const weatherTypes = `${weather.weather[0].main}`;
+    if(weatherTypes === 'Clear'){
         document.body.style.backgroundImage = 'url(img/clear.jpeg)';
     }
-    else if(weatherType === 'cloudy'){
+    else if(weatherTypes === 'Clouds'){
         document.body.style.backgroundImage = 'url(img/cloudy.jpeg)';
     }
-    else if(weatherType === 'cold'){
+    else if(weatherTypes === 'Cold'){
         document.body.style.backgroundImage = 'url(img/cold.jpeg)';
     }
-    else if(weatherType === 'haze'){
+    else if(weatherTypes === 'Haze'){
         document.body.style.backgroundImage = 'url(img/haze.jpeg)';
     }
-    else if(weatherType === 'rainy'){
+    else if(weatherTypes === 'Rain'){
         document.body.style.backgroundImage = 'url(img/rainy.jpeg)';
     }
-    else if(weatherType === 'snow'){
+    else if(weatherTypes === 'Snow'){
         document.body.style.backgroundImage = 'url(img/snow.jpeg)';
     }
-    else if(weatherType === 'stormy'){
+    else if(weatherTypes === 'Stormy'){
         document.body.style.backgroundImage = 'url(img/stormy.jpeg)';
     }
     else {
@@ -77,14 +80,14 @@ function showWeatherReport(weather){
 // date manager
 
 function dateManage(dateArg){
-    const date = ['Sunday' , 'Monday' , 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 'Saturday'];
+    const days = ['Sunday' , 'Monday' , 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 'Saturday'];
     const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
-    const year = dateArg.getFullyear();
+    const year = dateArg.getFullYear();
     const month = months[dateArg.getMonth()];
     const date = dateArg.getDate();
     const day = days[dateArg.getDay()];
     console.log(day);
 
-    return `${date} ${month} , ${day} ${year}`;
-}
+    return `${date} ${month} , (${day}) ${year}`;
+};

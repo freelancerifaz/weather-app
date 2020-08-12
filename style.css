@@ -38,8 +38,8 @@ body{
     outline: none;
 }
 .weather-body{
-    background-color: rgb(224, 221, 221);
-    padding: 4rem 0;
+    background-color: rgba(224, 221, 221, 0.787);
+    padding: 4rem 1rem;
     border-radius: 5px;
     display: none;
 }
@@ -48,4 +48,8 @@ body{
     font-size: 1.5rem;
     font-weight: 400;
     margin: 1rem 0;
+}
+.temp{
+    font-size: 3rem;
+    color: #d48e1e;
 }
