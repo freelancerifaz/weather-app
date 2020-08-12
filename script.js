@@ -1,10 +1,8 @@
 // weather api
 
 const weatherApi = {
-    keys : "4c498be4e9986ff88fc8f29fd42c7b35",
-    baseUrl : "http://api.openweathermap.org/data/2.5/weather" 
-    // key: "9c03ae49705801d954820517e5c354e8",
-    // baseUrl:"https://api.openweathermap.org/data/2.5/weather"
+    key: "9c03ae49705801d954820517e5c354e8",
+    baseUrl:"https://api.openweathermap.org/data/2.5/weather"
 }
 
 // add event listener function
