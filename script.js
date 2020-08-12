@@ -48,27 +48,35 @@ function showWeatherReport(weather){
     let weatherType = document.getElementById("weather");
     weatherType.innerText = `${weather.weather[0].main}`;
 
+    const weatherUpdate = document.getElementById("weather-update");
     const weatherTypes = `${weather.weather[0].main}`;
     if(weatherTypes === 'Clear'){
         document.body.style.backgroundImage = 'url(img/clear.jpeg)';
+        weatherUpdate.style.display = 'none';
     }
     else if(weatherTypes === 'Clouds'){
         document.body.style.backgroundImage = 'url(img/cloudy.jpeg)';
+        weatherUpdate.style.display = 'none';
     }
     else if(weatherTypes === 'Cold'){
         document.body.style.backgroundImage = 'url(img/cold.jpeg)';
+        weatherUpdate.style.display = 'none';
     }
     else if(weatherTypes === 'Haze'){
         document.body.style.backgroundImage = 'url(img/haze.jpeg)';
+        weatherUpdate.style.display = 'none';
     }
     else if(weatherTypes === 'Rain'){
         document.body.style.backgroundImage = 'url(img/rainy.jpeg)';
+        weatherUpdate.style.display = 'none';
     }
     else if(weatherTypes === 'Snow'){
         document.body.style.backgroundImage = 'url(img/snow.jpeg)';
+        weatherUpdate.style.display = 'none';
     }
     else if(weatherTypes === 'Stormy'){
         document.body.style.backgroundImage = 'url(img/stormy.jpeg)';
+        weatherUpdate.style.display = 'none';
     }
     else {
         document.body.style.backgroundImage = 'url(img/sunny4.jpeg)';

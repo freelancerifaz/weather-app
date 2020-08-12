@@ -15,8 +15,10 @@ body{
     text-align: center;
 }
 .title{
+    font-size: 2rem;
+    font-weight: 900;
     margin-top: 1rem;
-    color: #684f27;
+    color: yellow;
 }
 .search-box{
     background-color: rgb(224, 221, 221);
