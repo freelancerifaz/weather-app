@@ -71,7 +71,7 @@ function showWeatherReport(weather){
         document.body.style.backgroundImage = 'url(img/stormy.jpeg)';
     }
     else {
-        document.body.style.backgroundImage = 'url(img/sunny.jpeg)';
+        document.body.style.backgroundImage = 'url(img/sunny4.jpeg)';
     }
 };
 
